@@ -49,7 +49,7 @@ def bot_move():
                 # player goofed, rank to guarantee winning move
                 if w.count('Y') == 2:
                     rank = 100
-                # win conditions with 2 'X's get higher weighted rank
+                # rank move based on how many 'X's are in winning condition
                 elif w.count('X') == 2:
                     rank += 2
                 rank += 1
