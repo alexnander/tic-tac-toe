@@ -46,13 +46,14 @@ def bot_move():
         rank = 0
         for w in win_cond:
             if i in w:
+                # moves available automatically get rank of 1, when no moves available rank for move remains 0
+                rank = 1
                 # player goofed, rank to guarantee winning move
                 if w.count('Y') == 2:
                     rank = 100
                 # rank move based on how many 'X's are in winning condition
                 elif w.count('X') == 2:
                     rank += 2
-                rank += 1
         move_rank[i] = rank
 
     # find max ranked moved value
